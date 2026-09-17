@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#081827">
+  <meta name="description" content="Estudo de caso anonimizado de Data Quality, saneamento cadastral e reconciliação de estoque em uma operação logística.">
+  <meta property="og:title" content="Data Quality aplicada à Operação Logística">
+  <meta property="og:description" content="Saneamento cadastral, reconciliação físico × sistema e governança de estoque.">
+  <meta property="og:image" content="https://laismoreira07.github.io/case-data-quality-logistica/assets/banner.png">
+  <title>Data Quality aplicada à Operação Logística | Laís Moreira</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="topbar" id="inicio">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <span class="brand-mark" aria-hidden="true">DQ</span>
+      <span>Data Quality <small>× Logística</small></span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-principal">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Abrir menu</span>
+    </button>
+    <nav id="nav-principal" aria-label="Navegação principal">
+      <a href="#desafio">Desafio</a>
+      <a href="#metodologia">Metodologia</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#resultados">Resultados</a>
+      <a class="nav-cta" href="https://github.com/laismoreira07/case-data-quality-logistica">Documentação</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero section-pad">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Estudo de caso anonimizado · ambiente regulado</p>
+        <h1>Data confiável começa no encontro entre <span>operação e sistema.</span></h1>
+        <p class="hero-lead">Diagnóstico, saneamento cadastral e reconciliação de estoque em um centro de distribuição, conectando inventário físico, WMS e regras de negócio.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#jornada">Explorar o case</a>
+          <a class="button button-ghost" href="https://github.com/laismoreira07/case-data-quality-logistica">Ver documentação</a>
+        </div>
+        <ul class="hero-tags" aria-label="Competências principais">
+          <li>Data Quality</li>
+          <li>AS-IS / TO-BE</li>
+          <li>WMS</li>
+          <li>Governança</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal" aria-label="Representação visual do fluxo de reconciliação">
+        <div class="visual-glow"></div>
+        <div class="system-card source-card">
+          <span class="card-kicker">4 fontes</span>
+          <strong>Dados operacionais</strong>
+          <div class="source-list">
+            <span>Portal</span><span>Delage RX</span><span>SIGMA</span><span>Físico</span>
+          </div>
+        </div>
+        <div class="flow-line flow-one"></div>
+        <div class="system-card engine-card">
+          <div class="pulse-orbit"><span></span></div>
+          <span class="card-kicker">Núcleo</span>
+          <strong>Reconciliação</strong>
+          <small>validar · comparar · tratar</small>
+        </div>
+        <div class="flow-line flow-two"></div>
+        <div class="system-card output-card">
+          <span class="status-dot"></span>
+          <span class="card-kicker">Resultado</span>
+          <strong>Dado governado</strong>
+          <div class="mini-bars"><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics section-pad" aria-label="Indicadores do projeto">
+      <article class="metric reveal">
+        <strong>≈ 7,8 mil</strong>
+        <span>SKUs no escopo real</span>
+      </article>
+      <article class="metric reveal">
+        <strong>quase 2×</strong>
+        <span>a estimativa inicial</span>
+      </article>
+      <article class="metric reveal">
+        <strong>4 fontes</strong>
+        <span>conciliadas no diagnóstico</span>
+      </article>
+      <article class="metric reveal">
+        <strong>4 fluxos</strong>
+        <span>mapeados ponta a ponta</span>
+      </article>
+    </section>
+
+    <section class="section section-pad" id="desafio">
+      <div class="section-heading reveal">
+        <p class="eyebrow">O desafio</p>
+        <h2>Quando o estoque físico conta uma história diferente dos sistemas</h2>
+        <p>A operação precisava transformar divergências isoladas em um diagnóstico estruturado, capaz de diferenciar problemas de cadastro, processo, sistema e execução física.</p>
+      </div>
+      <div class="challenge-grid">
+        <article class="challenge-card reveal">
+          <span class="icon-box" aria-hidden="true">≠</span>
+          <h3>Físico × sistema</h3>
+          <p>Diferenças de quantidade, embalagem e localização comprometiam a confiança no saldo.</p>
+        </article>
+        <article class="challenge-card reveal">
+          <span class="icon-box" aria-hidden="true">◇</span>
+          <h3>Dados mestres</h3>
+          <p>Lote, validade, unidade de medida, fornecedor e posição exigiam padronização.</p>
+        </article>
+        <article class="challenge-card reveal">
+          <span class="icon-box" aria-hidden="true">AI</span>
+          <h3>IA no fluxo</h3>
+          <p>As respostas do recurso nativo de IA precisavam ser confrontadas com evidências físicas e sistêmicas.</p>
+        </article>
+        <article class="challenge-card reveal">
+          <span class="icon-box" aria-hidden="true">↔</span>
+          <h3>Múltiplas fontes</h3>
+          <p>Portal de Origem, Delage RX, SIGMA e inventário não formavam uma verdade única automática.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-flow" id="integracao">
+      <div class="section-pad">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Fluxo logístico integrado</p>
+          <h2>Tecnologia, processos e pessoas transformando a operação</h2>
+          <p>Uma leitura guiada do flowchart executivo: do dado inconsistente e da falta de integração até uma operação confiável, rastreável e orientada por resultados.</p>
+        </div>
+        <div class="demo-frame flow-demo reveal">
+          <picture>
+            <source media="(max-width: 640px)" srcset="assets/fluxo-integracao-mobile.gif">
+            <img src="assets/fluxo-integracao-desktop.gif" alt="Flowchart animado sobre a integração entre tecnologia, processos e pessoas" loading="lazy">
+          </picture>
+        </div>
+        <div class="flow-actions reveal">
+          <p class="flow-note">Versões independentes para desktop e celular · conteúdo genérico · nenhuma particularidade do cliente</p>
+          <a class="text-link" href="assets/flowchart-integracao-operacional.jpg" target="_blank">Abrir flowchart completo →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="jornada">
+      <div class="section-pad">
+        <div class="section-heading section-heading-light reveal">
+          <p class="eyebrow">Demonstração visual</p>
+          <h2>Da divergência ao dado governado</h2>
+          <p>A animação utiliza registros fictícios e possui versões específicas para computador e celular.</p>
+        </div>
+        <div class="demo-frame reveal">
+          <picture>
+            <source media="(max-width: 640px)" srcset="assets/demo-mobile.gif">
+            <img src="assets/demo-desktop.gif" alt="Animação mostrando inventário, validação, saneamento e governança dos dados" loading="lazy">
+          </picture>
+        </div>
+        <p class="demo-note">Conteúdo conceitual · dados sintéticos · nenhuma tela real reproduzida</p>
+      </div>
+    </section>
+
+    <section class="section section-pad" id="metodologia">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Metodologia</p>
+        <h2>Uma jornada de seis etapas orientada por evidências</h2>
+      </div>
+      <ol class="timeline">
+        <li class="reveal"><span>01</span><div><h3>Descoberta</h3><p>Observação em campo, entrevistas e entendimento do fluxo real.</p></div></li>
+        <li class="reveal"><span>02</span><div><h3>Mapeamento AS-IS</h3><p>Processos, sistemas, decisões manuais e exceções.</p></div></li>
+        <li class="reveal"><span>03</span><div><h3>Inventário</h3><p>Conferência física e captura dos atributos críticos.</p></div></li>
+        <li class="reveal"><span>04</span><div><h3>Reconciliação</h3><p>Comparação entre Delage RX, SIGMA, Portal e evidência física.</p></div></li>
+        <li class="reveal"><span>05</span><div><h3>Saneamento</h3><p>Correção, padronização, registro da causa e revalidação.</p></div></li>
+        <li class="reveal"><span>06</span><div><h3>TO-BE e governança</h3><p>Controles preventivos, responsabilidades e indicadores.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="section section-soft" id="diagnostico">
+      <div class="section-pad diagnostic-layout">
+        <div class="section-heading sticky-heading reveal">
+          <p class="eyebrow">Diagnóstico</p>
+          <h2>Seis dimensões para avaliar a qualidade</h2>
+          <p>O objetivo não era apenas corrigir saldos, mas entender por que as divergências eram criadas e como evitar reincidências.</p>
+        </div>
+        <div class="quality-list">
+          <article class="quality-row reveal"><span>01</span><div><h3>Completude</h3><p>Os atributos necessários estão preenchidos?</p></div><strong>Campos críticos</strong></article>
+          <article class="quality-row reveal"><span>02</span><div><h3>Consistência</h3><p>As fontes apresentam o mesmo valor?</p></div><strong>Entre sistemas</strong></article>
+          <article class="quality-row reveal"><span>03</span><div><h3>Unicidade</h3><p>Há duplicidade de item ou fornecedor?</p></div><strong>Cadastro mestre</strong></article>
+          <article class="quality-row reveal"><span>04</span><div><h3>Validade</h3><p>Formato e regra de negócio são respeitados?</p></div><strong>Lote e shelf life</strong></article>
+          <article class="quality-row reveal"><span>05</span><div><h3>Acurácia</h3><p>O registro corresponde à evidência física?</p></div><strong>Saldo e unidade</strong></article>
+          <article class="quality-row reveal"><span>06</span><div><h3>Rastreabilidade</h3><p>É possível reconstruir origem e tratamento?</p></div><strong>Histórico confiável</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-pad" id="sistemas">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Ecossistema analisado</p>
+        <h2>Sistemas diferentes, uma decisão operacional</h2>
+      </div>
+      <div class="ecosystem reveal">
+        <div class="eco-node"><small>Origem</small><strong>Portal</strong></div>
+        <span class="eco-arrow">→</span>
+        <div class="eco-node featured"><small>Gestão</small><strong>Delage RX</strong><em>WMS + fluxo com IA</em></div>
+        <span class="eco-arrow">↔</span>
+        <div class="eco-node"><small>Solicitações</small><strong>SIGMA</strong></div>
+        <span class="eco-arrow">↔</span>
+        <div class="eco-node"><small>Evidência</small><strong>Estoque físico</strong></div>
+      </div>
+      <div class="ai-callout reveal">
+        <span class="ai-badge">IA</span>
+        <div>
+          <h3>Validação funcional da IA nativa</h3>
+          <p>O foco foi comparar a resposta utilizada no fluxo do WMS com fotos, registros e evidências físicas; documentar divergências; e propor controles de confirmação humana, ajuste cadastral e acompanhamento.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="resultados">
+      <div class="section-pad">
+        <div class="section-heading section-heading-light reveal">
+          <p class="eyebrow">Entregas e resultados</p>
+          <h2>Da observação em campo a um modelo de governança</h2>
+        </div>
+        <div class="outcome-grid">
+          <article class="outcome reveal"><span>✓</span><p>Diagnóstico sistêmico e operacional estruturado por evidências.</p></article>
+          <article class="outcome reveal"><span>✓</span><p>Mapeamento AS-IS/TO-BE dos fluxos críticos do centro de distribuição.</p></article>
+          <article class="outcome reveal"><span>✓</span><p>Regras de validação para lote, validade, unidade, fornecedor e posição.</p></article>
+          <article class="outcome reveal"><span>✓</span><p>Classificação de causas e priorização de riscos operacionais.</p></article>
+          <article class="outcome reveal"><span>✓</span><p>Procedimentos, treinamento e alinhamento entre operação e área técnica.</p></article>
+          <article class="outcome reveal"><span>✓</span><p>Modelo de indicadores para acurácia, reincidência e tempo de tratamento.</p></article>
+        </div>
+        <div class="integrity-note reveal">
+          <strong>Compromisso com a evidência</strong>
+          <p>O case não publica percentuais de melhoria sem uma medição formal de antes e depois. O número quantitativo apresentado limita-se ao volume aproximado mapeado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-pad profile">
+      <div class="profile-copy reveal">
+        <p class="eyebrow">Atuação profissional</p>
+        <h2>Negócio, dados e operação na mesma análise</h2>
+        <p>Atuação em Business Analysis, governança e qualidade de dados, conectando usuários, processos logísticos e sistemas para transformar evidências em decisões.</p>
+        <div class="skill-cloud">
+          <span>Business Analysis</span><span>Data Quality</span><span>Data Governance</span>
+          <span>Data Reconciliation</span><span>BPMN</span><span>Supply Chain</span>
+          <span>Root Cause Analysis</span><span>Lean Six Sigma</span>
+        </div>
+      </div>
+      <aside class="profile-card reveal">
+        <span class="avatar" aria-hidden="true">LM</span>
+        <div><strong>Laís Carolline Pinto Moreira</strong><small>Business Analyst · Data, Systems & Process Analyst</small></div>
+        <a class="button button-primary" href="https://www.linkedin.com/in/lais-moreira-lm1698/" target="_blank" rel="noreferrer">Conectar no LinkedIn</a>
+        <a class="text-link" href="https://github.com/laismoreira07" target="_blank" rel="noreferrer">Ver outros projetos →</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>Estudo de caso anonimizado · Dados demonstrativos e visuais sintéticos</p>
+    <p>© <span id="year"></span> Laís Moreira</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
