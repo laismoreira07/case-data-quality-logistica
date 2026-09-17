@@ -27,6 +27,7 @@
       <a href="#desafio">Desafio</a>
       <a href="#metodologia">Metodologia</a>
       <a href="#diagnostico">Diagnóstico</a>
+      <a href="#tobe">TO-BE</a>
       <a href="#resultados">Resultados</a>
       <a class="nav-cta" href="https://github.com/laismoreira07/case-data-quality-logistica">Documentação</a>
     </nav>
@@ -35,7 +36,7 @@
   <main id="conteudo">
     <section class="hero section-pad">
       <div class="hero-copy reveal">
-        <p class="eyebrow">Estudo de caso anonimizado · ambiente regulado</p>
+        <p class="eyebrow">Estudo de caso anonimizado · operação logística</p>
         <h1>Data confiável começa no encontro entre <span>operação e sistema.</span></h1>
         <p class="hero-lead">Diagnóstico, saneamento cadastral e reconciliação de estoque em um centro de distribuição, conectando inventário físico, WMS e regras de negócio.</p>
         <div class="hero-actions">
@@ -90,8 +91,8 @@
         <span>conciliadas no diagnóstico</span>
       </article>
       <article class="metric reveal">
-        <strong>4 fluxos</strong>
-        <span>mapeados ponta a ponta</span>
+        <strong>12 GAPs</strong>
+        <span>estruturados no diagnóstico</span>
       </article>
     </section>
 
@@ -195,6 +196,93 @@
       </div>
     </section>
 
+    <section class="section section-pad" id="gaps">
+      <div class="section-heading reveal">
+        <p class="eyebrow">12 GAPs críticos</p>
+        <h2>Um diagnóstico organizado por causa, não apenas por sintoma</h2>
+        <p>Os achados foram agrupados em três categorias para conectar cada divergência ao domínio responsável e ao controle preventivo correspondente.</p>
+      </div>
+      <div class="gap-groups">
+        <article class="gap-group gap-operation reveal">
+          <div class="gap-title">
+            <span>01</span>
+            <div><small>Processos</small><h3>Operação física</h3></div>
+          </div>
+          <ul>
+            <li><strong>GAP 01</strong> Mistura de lotes no mesmo pallet</li>
+            <li><strong>GAP 04</strong> Posições bloqueadas ou alocadas</li>
+          </ul>
+        </article>
+        <article class="gap-group gap-data reveal">
+          <div class="gap-title">
+            <span>02</span>
+            <div><small>Governança</small><h3>Dados mestres</h3></div>
+          </div>
+          <ul>
+            <li><strong>GAP 02</strong> Evidência fotográfica genérica</li>
+            <li><strong>GAP 03</strong> Sobrescrita do histórico visual</li>
+            <li><strong>GAP 05</strong> Cadastros não padronizados</li>
+            <li><strong>GAP 07</strong> Dependência da qualidade na origem</li>
+          </ul>
+        </article>
+        <article class="gap-group gap-tech reveal">
+          <div class="gap-title">
+            <span>03</span>
+            <div><small>Tecnologia</small><h3>Sistemas e infraestrutura</h3></div>
+          </div>
+          <ul>
+            <li><strong>GAP 06</strong> Conversões e parametrizações</li>
+            <li><strong>GAP 08</strong> Validações preventivas insuficientes</li>
+            <li><strong>GAP 09</strong> Indisponibilidade das plataformas</li>
+            <li><strong>GAP 10</strong> Divergências na leitura por IA</li>
+            <li><strong>GAP 11</strong> Gestão de mudanças</li>
+            <li><strong>GAP 12</strong> Segregação de ambientes</li>
+          </ul>
+        </article>
+      </div>
+      <div class="cascade reveal" aria-label="Efeito cascata das inconsistências">
+        <span>Falha na origem</span><i>→</i>
+        <span>Erro propagado</span><i>→</i>
+        <span>Retrabalho</span><i>→</i>
+        <span>Risco de rastreabilidade</span>
+      </div>
+    </section>
+
+    <section class="section section-tobe" id="tobe">
+      <div class="section-pad">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Arquitetura TO-BE</p>
+          <h2>Da correção reativa à prevenção na origem</h2>
+          <p>O modelo futuro combina validação preventiva, reconciliação monitorada, tratamento de causa raiz e medição de reincidência.</p>
+        </div>
+        <ol class="control-flow">
+          <li class="reveal"><span>01</span><div><h3>Prevenir</h3><p>Validar cadastro, lote, validade, unidade e evidência no recebimento.</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>Executar</h3><p>Operar com posição válida, segregação de lotes e coleta no ambiente correto.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>Reconciliar</h3><p>Comparar evidência física e dados do Portal, Delage RX e SIGMA.</p></div></li>
+          <li class="reveal"><span>04</span><div><h3>Tratar</h3><p>Registrar a exceção, identificar a causa raiz, corrigir e revalidar.</p></div></li>
+          <li class="reveal"><span>05</span><div><h3>Sustentar</h3><p>Medir acurácia, reincidência, tempo de tratamento e qualidade da IA.</p></div></li>
+        </ol>
+        <div class="tobe-panels">
+          <article class="control-panel reveal">
+            <p class="eyebrow">Cinco camadas de controle</p>
+            <ul>
+              <li>Dados mestres e aprovação cadastral</li>
+              <li>Operação física e aplicação de FEFO</li>
+              <li>Sistemas, integrações e evidências</li>
+              <li>IA, coleta digital e supervisão humana</li>
+              <li>Infraestrutura, mudanças e contingência</li>
+            </ul>
+          </article>
+          <article class="control-panel ai-telemetry reveal">
+            <p class="eyebrow">Telemetria funcional da IA</p>
+            <h3>Automação sujeita a evidência e auditoria</h3>
+            <p>Leituras divergentes devem ser confirmadas por uma pessoa antes da atualização definitiva e registradas para análise de recorrência.</p>
+            <strong>Taxa de falha = leituras divergentes ÷ leituras validadas</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section section-pad" id="sistemas">
       <div class="section-heading reveal">
         <p class="eyebrow">Ecossistema analisado</p>
@@ -212,8 +300,8 @@
       <div class="ai-callout reveal">
         <span class="ai-badge">IA</span>
         <div>
-          <h3>Validação funcional da IA nativa</h3>
-          <p>O foco foi comparar a resposta utilizada no fluxo do WMS com fotos, registros e evidências físicas; documentar divergências; e propor controles de confirmação humana, ajuste cadastral e acompanhamento.</p>
+          <h3>Avaliação operacional da IA nativa</h3>
+          <p>As respostas utilizadas no fluxo do WMS foram confrontadas com registros e evidências físicas. O TO-BE recomenda confirmação humana, telemetria funcional e acompanhamento da reincidência.</p>
         </div>
       </div>
     </section>
@@ -231,6 +319,15 @@
           <article class="outcome reveal"><span>✓</span><p>Classificação de causas e priorização de riscos operacionais.</p></article>
           <article class="outcome reveal"><span>✓</span><p>Procedimentos, treinamento e alinhamento entre operação e área técnica.</p></article>
           <article class="outcome reveal"><span>✓</span><p>Modelo de indicadores para acurácia, reincidência e tempo de tratamento.</p></article>
+        </div>
+        <div class="kpi-strip reveal" aria-label="Indicadores recomendados">
+          <span>Acurácia</span>
+          <span>Completude</span>
+          <span>Reincidência</span>
+          <span>Tempo de tratamento</span>
+          <span>Falha de IA</span>
+          <span>Posição válida</span>
+          <span>Causa raiz</span>
         </div>
         <div class="integrity-note reveal">
           <strong>Compromisso com a evidência</strong>
